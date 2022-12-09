@@ -1,0 +1,8 @@
+{
+  "image":"ocaml/opam:ubuntu-22.04-ocaml-4.14",
+  "extensions": [
+      "ocamllabs.ocaml-platform"
+  ],
+  "runArgs": ["--net=host"],
+  "postCreateCommand": "sudo apt update && opam update && opam install ocaml-lsp-server ocamlformat-rpc"
+}

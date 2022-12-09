@@ -1,0 +1,5 @@
+# dune init proj env
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /workspaces/ocaml-env
+# Auto-detected concurrency: 8
