@@ -1,0 +1,13 @@
+(lang dune 3.6)
+
+(name 2022)
+
+(generate_opam_files true)
+
+(authors "Ezequiel Lewin")
+
+(package
+ (name 2022)
+ (synopsis "Advent of code 2022")
+ (depends ocaml dune))
+
