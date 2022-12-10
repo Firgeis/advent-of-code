@@ -1,4 +1,4 @@
 (executable
- (public_name env)
+ (public_name aoc2022)
  (name main)
- (libraries env))
+ (libraries aoc2022))
