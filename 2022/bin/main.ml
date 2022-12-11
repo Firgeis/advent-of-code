@@ -1,2 +1,2 @@
 Printexc.record_backtrace true;
-Printf.printf "\n%i\n" Aoc2022.Day3.result2;
+Printf.printf "\n%i\n" Aoc2022.Day4.result2;
