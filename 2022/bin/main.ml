@@ -1,2 +1,2 @@
-let () = Printf.printf "%i" Aoc2022.Day1.result2;
+let () = Printf.printf "\n%i\n" Aoc2022.Day2.result2;
 
