@@ -4,13 +4,6 @@ type direction =
 | Top
 | Bottom
 
-let print_matrix m name =
-  print_endline name;
-  m
-  |> Array.iter (fun x -> Array.iter (fun y -> Printf.printf "%i" y) x; print_endline "";);
-  print_endline "";
-  ()
-
 let sweep forest =
   let maxy = (Array.length forest - 1) in
   let maxx = (Array.length (Array.get forest 0) - 1) in
@@ -110,12 +103,10 @@ let direction_score x y maxx maxy forest direction =
         None) (y + 1)
     |> fun s -> max (Seq.length s) 1
 
-
 let find_scenic_spot forest =
   let maxy = (Array.length forest - 1) in
   let maxx = (Array.length (Array.get forest 0) - 1) in
   let max = ref 0 in
-  print_endline "";
   for y = 1 to (maxy - 1) do
     for x = 1 to (maxx - 1) do
       let this_direction_score = direction_score x y maxx maxy forest in
@@ -124,10 +115,8 @@ let find_scenic_spot forest =
       let top = this_direction_score Top in
       let bottom = this_direction_score Bottom in
       let scenic_score = left * right * top * bottom in
-      Printf.printf "%i" scenic_score;
       if scenic_score > !max then max := scenic_score;
     done;
-    print_endline "";
   done;
   !max
 
@@ -136,9 +125,7 @@ let forest =
   |> Seq.map (fun line -> line |> String.to_seq |> Seq.map (fun c -> int_of_char c - 48) |> Array.of_seq)
   |> Array.of_seq
 
-
 let result1 =
   sweep forest
-
 let result2 =
   find_scenic_spot forest
